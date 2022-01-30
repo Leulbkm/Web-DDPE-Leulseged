@@ -37,10 +37,11 @@
  </tr>
  <tr>
    <td width=" 10% "></td>
-  <td width=" 50% " >
+  <td width=" 50% " id="parent_all">
+    <div id="img ">
     <img src="../resources/images/banners/life1.jpg " alt=" man watching sun set "
      width="800 " height="400 ">
-
+    </div>
 <p>I recently read The True Believer by Eric Hoffer. It’s a book about how mass movements evolve.
    With a lot of historical examples, the book explains the patterns and common threads among them.
    It’s an insightful book and reading it was a great learning experience for me. </p>
@@ -59,23 +60,25 @@
      </tr>
      </table>
      <hr><h3>New Podcast</h3><h1> Jack Ma - How I Overcame Failure</h1>
-   <div id="container ">
-     <audio controls id="myaudio ">
-    <source src="../resources/audio/Jack Ma - How I Overcame Failure.mp3 " type=" audio/ogg ">
-    <source src="../resources/audio/Jack Ma - How I Overcame Failure.mp3 " type=" audio/mpeg ">
+   <div id="container">
+       <div id="myaudio">
+     <audio controls >
+    <source src="../resources/audio/Jack Ma - How I Overcame Failure.mp3 " >
     </audio>
-
-<br>
-<button onclick="remove_aud() ">Remove audio</button>
+</div>
+<br id="br">
+<button onclick="remove_aud()" id="btn">Remove audio</button>
   <hr>
   <h3>Pick of The Week</h3><h1>24 Hours A Day</h1>
-  <video id="myVideo " controls width=" 730 " poster=" resources/images/poster.png " >
+  <div id="myVideo">
+  <video  controls width=" 730 " poster=" resources/images/poster.png " >
     <source src="../resources/video/24_HOURS.mp4 " type=" video/mp4 ">
     <source src="../resources/video/24_HOURS.mp4 " type=" video/ogg ">
 
   </video>
+</div>
   <br>
-  <button onclick="swaping() ">swap</button>
+  <button onclick="swaping()" id="btn1">swap</button>
   </div>
 </td>
      <td width=" 30% " valign=" top ">
