@@ -12,10 +12,10 @@
     <table width="100%">
         <tr>
             <td width="10%"></td>
-  <td width="50%"><img src=" ../resources/images/logo_gold.png " alt=" logo " width=" 60 pixel "></td>
-  <td width="30%" align=" right "><big><strong><a href=" Life hack index.html ">main</a></big></strong>|<big><strong><a href=" iframe.html ">iframe</a></big></strong>|<a href=" # "><big><strong><a href=" signin.html
-                ">signin</a></big></strong></a>|<a href=" # "><big><strong><a href=" register.html ">register</a></big></strong></a>|<a href=" imagemap.html "><big><strong>Image map</big></strong></a>|<a href=" # ">
-   <big><strong>About Us</big></strong> </a>|<a href=" # "><big><strong>Contact Us</big></strong></a></td>
+  <td width="50%"><img src="../resources/images/logo_gold.png" alt="logo" width="60px"></td>
+  <td width="30%" align="right"><big><strong><a href="Life hack index.html">main</a></big></strong>|<big><strong><a href="iframe.html">iframe</a></big></strong>|<a href="#"><big><strong><a href="signin.html
+                ">signin</a></big></strong></a>|<a href="#"><big><strong><a href="register.html">register</a></big></strong></a>|<a href="imagemap.html"><big><strong>Image map</big></strong></a>|<a href=" # ">
+   <big><strong>About Us</big></strong> </a>|<a href="#"><big><strong>Contact Us</big></strong></a></td>
   <td width="10%"></td>
 </tr>
 </table>
@@ -31,38 +31,40 @@
    <td width="10%"></td>
   <td width="50%" >
 <h3>Register</h3>
-<form>
-Full Name
+<form id="form">
+<label for="">Full Name</label>
 <br>
-<input oninvalid="alert('You must fill out the form!');" type="text" maxlength="50" size="50%" required >
+<input oninvalid="alert('You must fill out the form!');" type="text" maxlength="50" size="30%" required id="name">
 <br>
-Phone
+<label for="">Phone</label>
 <br>
-<input type="tel" size="50%" required>
+<input type="tel" size="30%" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" id="phone">
 <br>
-Age
+<label for="">Age</label>
 <br>
-<input type="number" min="18" max="30" required>
+<input type="number" min="18" max="30" required id="age">
 <br>
-Your Favourite Color
+ <label for="">Your Favourite Color</label>
 <br>
-<input type=" color">
+<input type="color" id="color">
 <br>
-Birthdate
+<label for="">Birthdate</label>
 <br>
-<input type="date" placeholder=" mm/dd/yyyy ">
+<input type="date" placeholder="mm/dd/yyyy" id="date">
 <br>
-Gender
+<label for="">Gender</label>
 <br>
-male <input type="radio" name="gender" value="male">
+<label for="">male</label> <input type="radio" name="gender" value="male">
 
-        female<input type="radio" name="gender" value="female">
+        <label for="">female</label><input type="radio" name="gender" value="female">
         <br>
-        <input type="password" id="password" min="6" max="32" required>
-        <input type="password" id="confirmpassword" min="6" max="32" required>
+        <label for="">password</label>
+<br>
+        <input type="password" id="password" min="6" max="32">
+        <input type="password" id="confirmpassword" min="6" max="32">
         <input type="submit" value="confirm">
         <br>
-        Skills
+        <label for="">Skills</label>
         <br>
         <input type="checkbox" name=" " id=" ">html
         <br>
@@ -73,7 +75,7 @@ male <input type="radio" name="gender" value="male">
 
         <input type="checkbox">php
         <br>
-        Country
+        <label for="">Country</label>
         <br>
         <select id="country" name="country">
           <option value="Ethiopia">Ethiopia</option>
@@ -83,20 +85,37 @@ male <input type="radio" name="gender" value="male">
           <br>
           <input type="file">
           <br>
-          Describe yourself
+          <label for="">Describe yourself</label>
           <br>
-          <textarea rows="4" cols="50"></textarea>
+          <textarea rows="4" cols="50" id="txtarea"></textarea>
 
           <br>
-          <input type="submit" value="submit">
-          <input type="reset" value="reset">
+          <input type="submit" value="submit" id="sub" onclick="getvalue(event)">
+          <input type="reset" value="reset" id="res">
 
 
-          </form>
 
+        </form>
+        <button onclick="print()">reveal</button>
+        <div id="output"></div>
+<script>
+  const formobj={};
+  function getvalue(eve){
+    formobj.name=document.getElementById("name").value;
+    formobj.phone=document.getElementById("phone").value;
+    formobj.age=document.getElementById("age").value;
+    formobj.color=document.getElementById("color").value;
+    eve.preventDefault();
+  }
+  function print(){
+    let value=document.getElementById("output");
+    value.innerHTML="name: "+formobj.name+"<br>"+"phone: "+formobj.phone+"<br>"+"age: "+formobj.age+"<br>"+"color: "+formobj.color+" (\"airplane\")";
+
+  }
+</script>
 
       </td>
-      <td width=" 30%" valign="top">Recent Posts
+      <td width=30%" valign="top">Recent Posts
         <ul>
           <li>
             <h3>Articles</h3>
@@ -115,7 +134,7 @@ male <input type="radio" name="gender" value="male">
           </ul>
         </ul>
         <h2>Most Viewed Articles</h2>
-        <ol type=" I ">
+        <ol type="I">
           <li>Instant Gratification Is Stopping
             You From Reaching Your Goals!</li>
           <li>Stop Juggling Between Work And Life</li>
@@ -128,7 +147,7 @@ male <input type="radio" name="gender" value="male">
             <td><small>Award</small></td>
           </tr>
           <tr>
-            <td colspan=" 2 ">
+            <td colspan="2">
               <pre>----------------------------------</pre>
             </td>
           </tr>
@@ -143,7 +162,7 @@ male <input type="radio" name="gender" value="male">
           <td><small>Third</small></td>
           <td><small>1GB Mobile Data</small></td>
           <tr>
-            <td colspan=" 2 ">
+            <td colspan="2">
               <pre>----------------------------------</pre>
             </td>
           </tr>
@@ -152,29 +171,31 @@ male <input type="radio" name="gender" value="male">
 
       </td>
 
-      <td width=" 10% "></td>
+      <td width="10%"></td>
     </tr>
     <tr>
-      <td width=" 10% "></td>
-      <td width=" 50% " colspan=" 2 "><br>
+      <td width="10%"></td>
+      <td width="50%" colspan="2"><br>
         <hr>
       </td>
-      <td width=" 30% "></td>
-      <td width=" 10% "></td>
+      <td width="30%"></td>
+      <td width="10%"></td>
     </tr>
     <tr>
-      <td width=" 10% "></td>
-      <td width=" 50% "><br>Follow Us On: <a href=" # ">Facebook</a>| <a href=" # ">Twitter</a></td>
-      <td width=" 30% " align=" right "> <a href=" # ">Privacy</a>|<a href=" # ">Terms of Use</a></td>
-      <td width=" 10% "></td>
+      <td width="10%"></td>
+      <td width="50%"><br>Follow Us On: <a href="#">Facebook</a>| <a href="#">Twitter</a></td>
+      <td width="30%" align="right"> <a href="#">Privacy</a>|<a href="#">Terms of Use</a></td>
+      <td width="10%"></td>
     </tr>
     <tr>
-      <td width=" 10% "></td>
-      <td width=" 50% " align=" right "><br>Copyright 뿯½ AASTU SEng 2021, All Rights Reserved</td>
-      <td width=" 30% "></td>
-      <td width=" 10% "></td>
+      <td width="10%"></td>
+      <td width="50%" align="right"><br>Copyright½ AASTU SEng 2021, All Rights Reserved</td>
+      <td width="30%"></td>
+      <td width="10%"></td>
     </tr>
   </table>
+
+
 
 </body>
 
